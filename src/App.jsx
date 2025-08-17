@@ -7,6 +7,11 @@ import { Coins, Zap, Star, Trophy, Play, Lock } from 'lucide-react'
 import NutsAndBolts from './components/games/NutsAndBolts.jsx'
 import ColorBlocks from './components/games/ColorBlocks.jsx'
 import WaterSort from './components/games/WaterSort.jsx'
+import SandFall from './components/games/SandFall.jsx'
+import FruitMerge from './components/games/FruitMerge.jsx'
+import Snake from './components/games/Snake.jsx'
+import TicTacToe from './components/games/TicTacToe.jsx'
+import Memory from './components/games/Memory.jsx'
 import './App.css'
 
 // Game categories and data
@@ -19,8 +24,8 @@ const gameCategories = {
       { id: 'color-blocks', name: 'Color Blocks', icon: '🟦', levels: 50, unlocked: true },
       { id: 'block-fill', name: 'Block Fill', icon: '🧩', levels: 50, unlocked: true },
       { id: 'water-sort', name: 'Water Sort', icon: '🧪', levels: 50, unlocked: true },
-      { id: 'sand-fall', name: 'Sand Fall', icon: '⏳', levels: 50, unlocked: false },
-      { id: 'fruit-merge', name: 'Fruit Merge', icon: '🍉', levels: 50, unlocked: false },
+      { id: 'sand-fall', name: 'Sand Fall', icon: '⏳', levels: 50, unlocked: true },
+      { id: 'fruit-merge', name: 'Fruit Merge', icon: '🍉', levels: 50, unlocked: true },
       { id: 'wooden-blocks', name: 'Wooden Blocks', icon: '🪵', levels: 50, unlocked: false },
       { id: 'dots-boxes', name: 'Dots and Boxes', icon: '⚫', levels: 50, unlocked: false },
       { id: 'sliding-puzzle', name: 'Sliding Puzzle', icon: '🔢', levels: 50, unlocked: false },
@@ -56,7 +61,7 @@ const gameCategories = {
       { id: 'word-guess', name: 'Word Guess', icon: '📝', levels: 50, unlocked: false },
       { id: 'hangman', name: 'Hangman', icon: '🎪', levels: 50, unlocked: false },
       { id: 'word-finder', name: 'Word Finder', icon: '🔍', levels: 50, unlocked: false },
-      { id: 'memory', name: 'Memory', icon: '🧠', levels: 50, unlocked: false },
+      { id: 'memory', name: 'Memory', icon: '🧠', levels: 50, unlocked: true },
       { id: 'sound-memory', name: 'Sound Memory', icon: '🔊', levels: 50, unlocked: false },
       { id: 'minesweeper', name: 'Minesweeper', icon: '💣', levels: 50, unlocked: false }
     ]
@@ -68,7 +73,7 @@ const gameCategories = {
       { id: 'ping-pong', name: 'Ping Pong', icon: '🏓', levels: 50, unlocked: false },
       { id: 'pool', name: 'Pool', icon: '🎱', levels: 50, unlocked: false },
       { id: 'soccer-pool', name: 'Soccer Pool', icon: '⚽', levels: 50, unlocked: false },
-      { id: 'snake', name: 'Snake', icon: '🐍', levels: 50, unlocked: false },
+      { id: 'snake', name: 'Snake', icon: '🐍', levels: 50, unlocked: true },
       { id: 'flappy-jump', name: 'Flappy Jump', icon: '🏀', levels: 50, unlocked: false },
       { id: 'archery', name: 'Archery', icon: '🏹', levels: 50, unlocked: false },
       { id: 'darts', name: 'Darts', icon: '🎯', levels: 50, unlocked: false }
@@ -78,7 +83,7 @@ const gameCategories = {
     title: "Simple & Logic Games",
     color: "bg-yellow-500",
     games: [
-      { id: 'tic-tac-toe', name: 'Tic Tac Toe', icon: '❌', levels: 50, unlocked: false },
+      { id: 'tic-tac-toe', name: 'Tic Tac Toe', icon: '❌', levels: 50, unlocked: true },
       { id: '4-in-row', name: '4 in a Row', icon: '🔴', levels: 50, unlocked: false },
       { id: 'tap-match', name: 'Tap Match', icon: '🍓', levels: 50, unlocked: false },
       { id: 'number-slide', name: 'Number Slide', icon: '🔢', levels: 50, unlocked: false },
@@ -245,7 +250,7 @@ function GameScreen({ gameId, category, onBack }) {
         return (
           <NutsAndBolts 
             level={currentLevel} 
-            onComplete={handleGameComplete}
+            onLevelComplete={handleGameComplete}
             onBack={onBack}
           />
         )
@@ -253,7 +258,7 @@ function GameScreen({ gameId, category, onBack }) {
         return (
           <ColorBlocks 
             level={currentLevel} 
-            onComplete={handleGameComplete}
+            onLevelComplete={handleGameComplete}
             onBack={onBack}
           />
         )
@@ -261,7 +266,47 @@ function GameScreen({ gameId, category, onBack }) {
         return (
           <WaterSort 
             level={currentLevel} 
-            onComplete={handleGameComplete}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        )
+      case 'sand-fall':
+        return (
+          <SandFall 
+            level={currentLevel} 
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        )
+      case 'fruit-merge':
+        return (
+          <FruitMerge 
+            level={currentLevel} 
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        )
+      case 'snake':
+        return (
+          <Snake 
+            level={currentLevel} 
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        )
+      case 'tic-tac-toe':
+        return (
+          <TicTacToe 
+            level={currentLevel} 
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        )
+      case 'memory':
+        return (
+          <Memory 
+            level={currentLevel} 
+            onLevelComplete={handleGameComplete}
             onBack={onBack}
           />
         )
