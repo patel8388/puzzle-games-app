@@ -12,6 +12,27 @@ import FruitMerge from './components/games/FruitMerge.jsx'
 import Snake from './components/games/Snake.jsx'
 import TicTacToe from './components/games/TicTacToe.jsx'
 import Memory from './components/games/Memory.jsx'
+import ColorCards from './components/games/ColorCards.jsx'
+import Minesweeper from './components/games/Minesweeper.jsx'
+import Sudoku from './components/games/Sudoku.jsx'
+import WoodenBlocks from './components/games/WoodenBlocks.jsx'
+import DotsAndBoxes from './components/games/DotsAndBoxes.jsx'
+import SlidingPuzzle from './components/games/SlidingPuzzle.jsx'
+import NumberMerge from './components/games/NumberMerge.jsx'
+import CrossSums from './components/games/CrossSums.jsx'
+import NumberConnect from './components/games/NumberConnect.jsx'
+import ColorConnect from './components/games/ColorConnect.jsx'
+import NumberPuzzle from './components/games/NumberPuzzle.jsx'
+import Chess from './components/games/Chess.jsx'
+import ChessPuzzles from './components/games/ChessPuzzles.jsx'
+import Checkers from './components/games/Checkers.jsx'
+import Backgammon from './components/games/Backgammon.jsx'
+import Ludo from './components/games/Ludo.jsx'
+import Solitaire from './components/games/Solitaire.jsx'
+import Hearts from './components/games/Hearts.jsx'
+import Reversi from './components/games/Reversi.jsx'
+import Spiderette from './components/games/Spiderette.jsx'
+import SpiderSolitaire from './components/games/SpiderSolitaire.jsx'
 import './App.css'
 
 // Game categories and data
@@ -26,31 +47,30 @@ const gameCategories = {
       { id: 'water-sort', name: 'Water Sort', icon: '🧪', levels: 50, unlocked: true },
       { id: 'sand-fall', name: 'Sand Fall', icon: '⏳', levels: 50, unlocked: true },
       { id: 'fruit-merge', name: 'Fruit Merge', icon: '🍉', levels: 50, unlocked: true },
-      { id: 'wooden-blocks', name: 'Wooden Blocks', icon: '🪵', levels: 50, unlocked: false },
-      { id: 'dots-boxes', name: 'Dots and Boxes', icon: '⚫', levels: 50, unlocked: false },
-      { id: 'sliding-puzzle', name: 'Sliding Puzzle', icon: '🔢', levels: 50, unlocked: false },
-      { id: 'number-merge', name: 'Number Merge', icon: '🔢', levels: 50, unlocked: false },
-      { id: 'cross-sums', name: 'Cross Sums', icon: '➕', levels: 50, unlocked: false },
-      { id: 'number-connect', name: 'Number Connect', icon: '🔗', levels: 50, unlocked: false },
-      { id: 'color-connect', name: 'Color Connect', icon: '🌈', levels: 50, unlocked: false },
-      { id: 'number-puzzle', name: 'Number Puzzle', icon: '🔢', levels: 50, unlocked: false }
+      { id: "wooden-blocks", name: "Wooden Blocks", icon: "🪵", levels: 50, unlocked: true },
+      { id: "dots-boxes", name: "Dots and Boxes", icon: "⚫", levels: 50, unlocked: true },
+      { id: "sliding-puzzle", name: "Sliding Puzzle", icon: "🔢", levels: 50, unlocked: true },
+      { id: "number-merge", name: "Number Merge", icon: "🔢", levels: 50, unlocked: true },
+      { id: "cross-sums", name: "Cross Sums", icon: "➕", levels: 50, unlocked: true },
+      { id: "number-connect", name: "Number Connect", icon: "🔗", levels: 50, unlocked: true },
+      { id: "color-connect", name: "Color Connect", icon: "🌈", levels: 50, unlocked: true },
+      { id: "number-puzzle", name: "Number Puzzle", icon: "🔢", levels: 50, unlocked: true }
     ]
   },
   classic: {
     title: "Classic Games",
     color: "bg-blue-500",
     games: [
-      { id: 'chess', name: 'Chess', icon: '♛', levels: 50, unlocked: false },
-      { id: 'chess-puzzles', name: 'Chess Puzzles', icon: '♞', levels: 50, unlocked: false },
-      { id: 'checkers', name: 'Checkers', icon: '⚫', levels: 50, unlocked: false },
-      { id: 'backgammon', name: 'Backgammon', icon: '🎲', levels: 50, unlocked: false },
-      { id: 'ludo', name: 'Ludo', icon: '🎯', levels: 50, unlocked: false },
-      { id: 'solitaire', name: 'Solitaire', icon: '🃏', levels: 50, unlocked: false },
-      { id: 'sudoku', name: 'Sudoku', icon: '🔢', levels: 50, unlocked: false },
-      { id: 'hearts', name: 'Hearts', icon: '♥️', levels: 50, unlocked: false },
-      { id: 'reversi', name: 'Reversi', icon: '⚪', levels: 50, unlocked: false },
-      { id: 'spiderette', name: 'Spiderette', icon: '🕷️', levels: 50, unlocked: false },
-      { id: 'spider-solitaire', name: 'Spider Solitaire', icon: '🕸️', levels: 50, unlocked: false },
+      { id: "chess", name: "Chess", icon: "♟️", levels: 50, unlocked: true },      { id: "chess-puzzles", name: "Chess Puzzles", icon: "♞", levels: 50, unlocked: true },
+      { id: "checkers", name: "Checkers", icon: "⚫", levels: 50, unlocked: true },
+      { id: "backgammon", name: "Backgammon", icon: "🎲", levels: 50, unlocked: true },
+      { id: "ludo", name: "Ludo", icon: "🎯", levels: 50, unlocked: true },
+      { id: "solitaire", name: "Solitaire", icon: "🃏", levels: 50, unlocked: true },
+      { id: 'sudoku', name: 'Sudoku', icon: '🔢', levels: 50, unlocked: true },
+      { id: "hearts", name: "Hearts", icon: "♥️", levels: 50, unlocked: true },
+      { id: "reversi", name: "Reversi", icon: "⚪", levels: 50, unlocked: true },
+      { id: "spiderette", name: "Spiderette", icon: "🕷️", levels: 50, unlocked: true },
+      { id: "spider-solitaire", name: "Spider Solitaire", icon: "🕸️", levels: 50, unlocked: true },
       { id: 'freecell', name: 'Freecell', icon: '🃁', levels: 50, unlocked: false }
     ]
   },
@@ -63,7 +83,7 @@ const gameCategories = {
       { id: 'word-finder', name: 'Word Finder', icon: '🔍', levels: 50, unlocked: false },
       { id: 'memory', name: 'Memory', icon: '🧠', levels: 50, unlocked: true },
       { id: 'sound-memory', name: 'Sound Memory', icon: '🔊', levels: 50, unlocked: false },
-      { id: 'minesweeper', name: 'Minesweeper', icon: '💣', levels: 50, unlocked: false }
+      { id: 'minesweeper', name: 'Minesweeper', icon: '💣', levels: 50, unlocked: true }
     ]
   },
   action: {
@@ -89,8 +109,7 @@ const gameCategories = {
       { id: 'number-slide', name: 'Number Slide', icon: '🔢', levels: 50, unlocked: false },
       { id: 'mancala', name: 'Mancala', icon: '🪨', levels: 50, unlocked: false },
       { id: 'yatzy', name: 'Yatzy', icon: '🎲', levels: 50, unlocked: false },
-      { id: 'sea-battle', name: 'Sea Battle', icon: '🚢', levels: 50, unlocked: false },
-      { id: 'color-cards', name: 'Color Cards', icon: '🃏', levels: 50, unlocked: false }
+      { id: 'sea-battle', name: 'Sea Battle', icon: '🚢', levels: 50, unlocked: false },      { id: 'color-cards', name: 'Color Cards', icon: '🌈', levels: 50, unlocked: true },
     ]
   }
 }
@@ -310,9 +329,177 @@ function GameScreen({ gameId, category, onBack }) {
             onBack={onBack}
           />
         )
+      case "color-cards":
+        return (
+          <ColorCards
+            level={currentLevel}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        );
+      case "minesweeper":
+        return (
+          <Minesweeper
+            level={currentLevel}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        );
+      case "sudoku":
+        return (
+          <Sudoku
+            level={currentLevel}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        );
+      case "wooden-blocks":
+        return (
+          <WoodenBlocks
+            level={currentLevel}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        );
+      case "dots-boxes":
+        return (
+          <DotsAndBoxes
+            level={currentLevel}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        );
+      case "sliding-puzzle":
+        return (
+          <SlidingPuzzle
+            level={currentLevel}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        );
+      case "number-merge":
+        return (
+          <NumberMerge
+            level={currentLevel}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        );
+      case "cross-sums":
+        return (
+          <CrossSums
+            level={currentLevel}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        );
+      case "number-connect":
+        return (
+          <NumberConnect
+            level={currentLevel}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        );
+      case "color-connect":
+        return (
+          <ColorConnect
+            level={currentLevel}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        );
+      case "number-puzzle":
+        return (
+          <NumberPuzzle
+            level={currentLevel}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        );
+      case "chess":
+        return (
+          <Chess
+            level={currentLevel}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        );
+      case "chess-puzzles":
+        return (
+          <ChessPuzzles
+            level={currentLevel}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        );
+      case "checkers":
+        return (
+          <Checkers
+            level={currentLevel}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        );
+      case "backgammon":
+        return (
+          <Backgammon
+            level={currentLevel}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        );
+      case "ludo":
+        return (
+          <Ludo
+            level={currentLevel}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        );
+      case "solitaire":
+        return (
+          <Solitaire
+            level={currentLevel}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        );
+      case "hearts":
+        return (
+          <Hearts
+            level={currentLevel}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        );
+      case "reversi":
+        return (
+          <Reversi
+            level={currentLevel}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        );
+      case "spiderette":
+        return (
+          <Spiderette
+            level={currentLevel}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        );
+      case "spider-solitaire":
+        return (
+          <SpiderSolitaire
+            level={currentLevel}
+            onLevelComplete={handleGameComplete}
+            onBack={onBack}
+          />
+        );
       default:
         return (
-          <Card className="p-8">
+          <Card>
             <CardContent className="text-center">
               <div className="text-6xl mb-4">🎮</div>
               <h2 className="text-xl font-bold mb-2">Game Coming Soon!</h2>
@@ -340,7 +527,7 @@ function GameScreen({ gameId, category, onBack }) {
               </div>
             </CardContent>
           </Card>
-        )
+        );
     }
   }
 

@@ -56,10 +56,10 @@ const TicTacToe = ({ level = 1, onLevelComplete, onBack }) => {
       for (let i = 0; i < 9; i++) {
         if (board[i] === null) {
           board[i] = 'O'
-          const eval = minimax(board, depth + 1, false, alpha, beta)
+          const evaluation = minimax(board, depth + 1, false, alpha, beta)
           board[i] = null
-          maxEval = Math.max(maxEval, eval)
-          alpha = Math.max(alpha, eval)
+          maxEval = Math.max(maxEval, evaluation)
+          alpha = Math.max(alpha, evaluation)
           if (beta <= alpha) break
         }
       }
@@ -69,10 +69,10 @@ const TicTacToe = ({ level = 1, onLevelComplete, onBack }) => {
       for (let i = 0; i < 9; i++) {
         if (board[i] === null) {
           board[i] = 'X'
-          const eval = minimax(board, depth + 1, true, alpha, beta)
+          const evaluation = minimax(board, depth + 1, true, alpha, beta)
           board[i] = null
-          minEval = Math.min(minEval, eval)
-          beta = Math.min(beta, eval)
+          minEval = Math.min(minEval, evaluation)
+          beta = Math.min(beta, evaluation)
           if (beta <= alpha) break
         }
       }
